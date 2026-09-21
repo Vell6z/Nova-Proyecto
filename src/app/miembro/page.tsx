@@ -16,10 +16,24 @@ export default function MiembroPage() {
             tabla de usuarios.
           </p>
         </div>
-        <p className="text-slate-400">
-          Contenido pensado para un miembro: información general, sin acceso a la
-          gestión de usuarios.
-        </p>
+
+        <div className="grid grid-cols-2 grid-rows-2 gap-4">
+          <div className="bg-emerald-400/10 row-span-2 border border-emerald-500/40 p-4 rounded-lg shadow">
+            <p className="text-sm text-white">Tareas pendientes</p>
+            <h2 className="text-2xl font-bold">3</h2>
+          </div>
+
+          <div className="bg-emerald-400/10 border border-emerald-500/40 p-4 rounded-lg shadow">
+            <p className="text-sm text-white">Departamento</p>
+            <h2 className="text-xl font-bold">Communities</h2>
+          </div>
+
+          <div className="bg-emerald-400/10 border border-emerald-500/40 p-4 rounded-lg shadow">
+            <p className="text-sm text-white">Próximas actividades</p>
+            <h2 className="text-lg font-bold">Reunión de departamento</h2>
+            <p className="text-sm text-green-500">Miércoles</p>
+          </div>
+        </div>
       </section>
     </RoleGuard>
   );

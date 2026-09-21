@@ -4,7 +4,7 @@
 // También incluye la tabla (placeholder de la tarea 6 de Sol).
 
 import { RoleGuard } from "@/components/RoleGuard";
-import { TablaPlaceholder } from "@/components/TablaPlaceholder";
+import { TablaUsuarios } from "@/components/TablaUsuarios";
 
 export default function JuntaPage() {
   return (
@@ -12,11 +12,9 @@ export default function JuntaPage() {
       <section>
         <div className="mb-6 rounded-lg border border-sky-500/40 bg-sky-500/10 p-6">
           <h1 className="text-2xl font-bold text-sky-200">Panel de Junta</h1>
-          <p className="mt-1 text-sky-100/80">
-            Vista de seguimiento. Esta pantalla solo la ve el rol Junta.
-          </p>
         </div>
-        <TablaPlaceholder />
+        
+        <TablaUsuarios />
       </section>
     </RoleGuard>
   );

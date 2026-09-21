@@ -12,7 +12,7 @@
 import { useRole } from "@/context/RoleContext";
 import { ROLES, ROLE_LABELS } from "@/lib/roles";
 
-export function RoleSelectorPlaceholder() {
+export function RoleSelector() {
   const { role, setRole } = useRole();
 
   return (

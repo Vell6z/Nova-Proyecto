@@ -1,31 +1,43 @@
 "use client";
 
-// Barra superior compartida: navegación entre las 3 vistas + el selector de rol.
-// La navegación es solo para poder probar la protección de rutas manualmente
-// (entrar a /admin siendo miembro, por ejemplo, y ver que redirige).
+// Barra de navegación principal.
+// Contiene el nombre del proyecto, los enlaces y el selector de rol.
 
 import Link from "next/link";
-import { RoleSelectorPlaceholder } from "./RoleSelectorPlaceholder";
+import { RoleSelector } from "./RoleSelector";
 
 export function NavBar() {
   return (
-    <header className="border-b border-slate-800 bg-slate-900/60">
-      <nav className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-6 py-3">
-        <div className="flex items-center gap-4">
-          <span className="font-semibold text-slate-100">Mini panel de roles</span>
-          <div className="flex gap-3 text-sm text-slate-400">
-            <Link href="/admin" className="hover:text-slate-100">
-              /admin
+    <header className="border-b border-slate-700 bg-slate-900">
+      <nav className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+        <div className="flex flex-wrap items-center gap-5">
+          <Link href="/" className="text-xl font-bold text-white">
+            NOVApp
+          </Link>
+
+          <div className="flex gap-2 text-sm">
+            <Link
+              href="/admin"
+              className="rounded-md px-3 py-2 text-slate-300 hover:bg-slate-700 hover:text-white"
+            >
+              Admin
             </Link>
-            <Link href="/junta" className="hover:text-slate-100">
-              /junta
+            <Link
+              href="/junta"
+              className="rounded-md px-3 py-2 text-slate-300 hover:bg-slate-700 hover:text-white"
+            >
+              Junta
             </Link>
-            <Link href="/miembro" className="hover:text-slate-100">
-              /miembro
+            <Link
+              href="/miembro"
+              className="rounded-md px-3 py-2 text-slate-300 hover:bg-slate-700 hover:text-white"
+            >
+              Miembro
             </Link>
           </div>
         </div>
-        <RoleSelectorPlaceholder />
+
+        <RoleSelector />
       </nav>
     </header>
   );
