@@ -14,19 +14,26 @@ import { ROLES, ROLE_LABELS } from "@/lib/roles";
 
 export function RoleSelector() {
   const { role, setRole } = useRole();
+  const coloresRol = {
+    "admin": "bg-rose-500/40 text-white",
+    "junta": "bg-sky-500/40 text-white",
+    "miembro": "bg-emerald-500/40 text-white",
+  }
 
   return (
     <div className="flex items-center gap-2">
       <span className="text-sm text-slate-400">Rol:</span>
       <div className="flex gap-1">
-        {ROLES.map((r) => (
+        {
+
+        ROLES.map((r) => (
           <button
             key={r}
             onClick={() => setRole(r)}
             className={
               "rounded-md px-3 py-1 text-sm transition-colors " +
               (role === r
-                ? "bg-indigo-500 text-white"
+                ? coloresRol[r]
                 : "bg-slate-700 text-slate-200 hover:bg-slate-600")
             }
           >
